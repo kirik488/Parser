@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 
 # Traffic-weather-News
 link = "https://yandex.ru/"
-recponce = requests.get(link).text
-soup = BeautifulSoup(recponce, "lxml")
+response = requests.get(link).text
+soup = BeautifulSoup(response, "lxml")
 
 # Weather
 weather = soup.find("div", "widget__content weather__content-outer")

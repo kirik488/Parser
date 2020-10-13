@@ -8,8 +8,8 @@ link = f"https://zastavok.net"
 run = "ц"
 # Кол-во страниц для парсинга
 for storage in range(2):
-    responce = requests.get(f"{link}/{storage_number}").text
-    soup = BeautifulSoup(responce, "lxml")
+    response = requests.get(f"{link}/{storage_number}").text
+    soup = BeautifulSoup(response, "lxml")
     block = soup.find("div", "block-photo")
     all_image = block.find_all("div", "short_full")
 
