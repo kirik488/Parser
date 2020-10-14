@@ -1,11 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 
-image_number = 0
+image_number = 1
 storage_number = 1
 link = f"https://zastavok.net"
 # Названия прогона
-run = "ц"
+run = input("Введите атрибут")
 # Кол-во страниц для парсинга
 for storage in range(2):
     response = requests.get(f"{link}/{storage_number}").text
@@ -28,3 +28,4 @@ for storage in range(2):
         print(f"Изображение номер:{image_number} скачено")
         image_number += 1
     storage_number += 1
+print("End")
