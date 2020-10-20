@@ -34,4 +34,4 @@ with open("Now.txt", "w") as file:
         file.write(f"{x}) {a}\n")
         x += 1
 
-print("Готово")
+print("End")
