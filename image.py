@@ -28,4 +28,4 @@ for storage in range(2):
         print(f"Изображение номер:{image_number} скачено")
         image_number += 1
     storage_number += 1
-print("End")
+print("End!")
