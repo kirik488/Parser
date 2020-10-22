@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import time
 
 # Traffic-weather-News
 link = "https://yandex.ru/"
@@ -23,6 +24,7 @@ traffic_text = traffic_now.find("a").text
 new = soup.find("ol", "list news__list")
 news_block = new.find_all("span", "news__item-content")
 
+time_now = time.localtime()
 with open("Now.txt", "w") as file:
     file.write(f"Сейчас:{weather_now},{weather_all}\n"
                f"Пробки:{traffic_number} балла "
@@ -33,5 +35,8 @@ with open("Now.txt", "w") as file:
         a = str(news).rstrip("</span>").lstrip('<span class="news__item-content">')
         file.write(f"{x}) {a}\n")
         x += 1
+    file.write(f"{time_now.tm_hour}:"
+               f"{time_now.tm_min}:{time_now.tm_sec}")
 
-print("End")
+print(f"End! {time_now.tm_hour}:"
+      f"{time_now.tm_min}:{time_now.tm_sec}")
