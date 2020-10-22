@@ -38,5 +38,5 @@ with open("Now.txt", "w") as file:
     file.write(f"{time_now.tm_hour}:"
                f"{time_now.tm_min}:{time_now.tm_sec}")
 
-print(f"End!!! {time_now.tm_hour}:"
+print(f"Completed! {time_now.tm_hour}:"
       f"{time_now.tm_min}:{time_now.tm_sec}")
