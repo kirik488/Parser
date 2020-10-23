@@ -1,12 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
+import time
 
+print("By default, two pages are download(36 image)")
 image_number = 1
 storage_number = 1
 link = f"https://zastavok.net"
-# Названия прогона
-run = input("Введите атрибут")
-# Кол-во страниц для парсинга
+# Name run
+run = time.strftime("%d.%b.%y.")
+# Pages for parsing
 for storage in range(2):
     response = requests.get(f"{link}/{storage_number}").text
     soup = BeautifulSoup(response, "lxml")
@@ -25,7 +27,7 @@ for storage in range(2):
         with open(f"image/{run}{image_number}.jpg","wb") as file:
             file.write(image_bytes)
 
-        print(f"Изображение номер:{image_number} скачено")
+        print(f"Image: {run}{image_number} downloaded")
         image_number += 1
     storage_number += 1
 print("End!")
