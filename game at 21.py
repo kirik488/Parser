@@ -152,8 +152,8 @@ while bank_comp > 0 and bank_player > 0:
                 bank_player += 1
                 print("Вы победили и получаете 1 очко")
             bank_comp -= 1
-    print(f"Компьютер: {bank_comp}\n"
-          f"Игрок: {bank_player}")
+    print(f"Компьютер: {bank_comp}.\n"
+          f"Игрок: {bank_player}.")
     round_ += 1
 print("_________Общий счёт____________")
 if bank_comp > bank_player:
